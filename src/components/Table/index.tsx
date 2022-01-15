@@ -124,9 +124,9 @@ function TableComponent({
                                 />
                             </th>
 
-                            <th className="d-flex justify-content-between align-items-center">
+                            <th className="d-flex align-items-center">
                                 <h5>{t.formatMessage({ id: 'table.select_all' })}</h5>
-                                <Button onClick={() => sortAndGroup()} className="sort-btn btn-color-green">
+                                <Button onClick={() => sortAndGroup()} className="ml-5 sort-btn btn-color-green">
                                     <img src="/img/sort.svg" alt="sort" />
                                 </Button>
                             </th>
@@ -178,7 +178,7 @@ function TableComponent({
                                     <td>
                                         <ContactComponent key={contact.id} {...contact} />
                                     </td>
-                                    <td className={contact.tags.length > 0 ? 'd-flex' : ''}>
+                                    <td>
                                         {contact.tags.length > 0 && (
                                             <OverlayTrigger
                                                 rootClose
@@ -196,7 +196,7 @@ function TableComponent({
                                                     }
                                                 }}
                                                 overlay={
-                                                    <Popover>
+                                                    <Popover style={{ margin: '0' }}>
                                                         {contact.tags.map((tag) => (
                                                             <Badge className="m-2 tag-badge" key={tag.name}>
                                                                 {tag.name}

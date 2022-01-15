@@ -72,7 +72,14 @@ function Sidebar({
                     title={t.formatMessage({ id: 'tag_table.message_received' })}
                 />
 
-                <Button onClick={() => onSave()} type="submit" className="save-filters custom-save-btn btn-color-green">
+                <Button
+                    onClick={() => {
+                        setOpen(false);
+                        onSave();
+                    }}
+                    type="submit"
+                    className="save-filters custom-save-btn btn-color-green"
+                >
                     {t.formatMessage({ id: 'button.save_filters' })}
                 </Button>
             </div>

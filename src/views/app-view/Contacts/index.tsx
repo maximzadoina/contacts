@@ -95,11 +95,8 @@ function Contacts(): JSX.Element {
                     })
                     .then((response) => {
                         setTotalContacts(response.data.totalCount);
-                        setContacts(
-                            _.uniqBy([...contacts, ...response.data.contacts], (contact: Contact) => {
-                                return contact.id;
-                            }),
-                        );
+                        console.log(response.data.contacts);
+                        setContacts(response.data.contacts);
                         setLoading(false);
                     })
                     .catch((err) => {
@@ -135,8 +132,8 @@ function Contacts(): JSX.Element {
     }, []);
 
     useEffect(() => {
-        if (tagsToExclude.length > 0 && tagsToExclude.length > 0) fetchContacts();
-    }, [tagsToExclude, tagsToExclude]);
+        fetchContacts();
+    }, []);
 
     const handleTags = (position: number, type: string, tag?: string) => {
         let tags;
@@ -184,7 +181,7 @@ function Contacts(): JSX.Element {
 
     return (
         <>
-            {error.length > 0 && <Alert>{error}</Alert>}
+            {error.length > 0 && <Alert className="px-5">{error}</Alert>}
 
             <div className="contacts-container d-flex justify-content-start align-items-start pr-3 pl-3">
                 <Sidebar
