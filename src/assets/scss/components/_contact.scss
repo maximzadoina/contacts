@@ -1,0 +1,52 @@
+.contact{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0;
+    align-items: center;
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 3.5rem 1fr;
+    column-gap: 1rem;
+    grid-template-areas: 'image name'
+                         'image number';
+
+    .contact-img {
+        width:3.5rem;
+        aspect-ratio: 1;
+        grid-area: image;
+    }
+
+    .contact-phone-number{
+        grid-area:number;
+        color:$light-gray;
+        font-weight: 400;
+    }
+
+    .contact-name{
+        grid-area:name;
+        font-weight: 700;
+    }
+
+     @media(max-width: 767.98px) {
+         column-gap: .25rem;
+        .contact-img{
+            width:3.25rem;
+        }
+         .contact-name{
+             font-size: .9rem;
+             line-height: .9rem;
+         }
+         .contact-phone-number{
+             font-size:.9rem;
+         }
+     }
+
+}
+
+    
+.contact-line{
+    position:absolute;
+    top:100%;
+    color:red;
+    border-bottom:1px solid $lighter-gray;
+    width:50%;
+}

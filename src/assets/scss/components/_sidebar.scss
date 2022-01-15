@@ -1,0 +1,159 @@
+.sidebar-container{
+    position: sticky;
+    top:0;
+    box-shadow:13px 1px 41px -25px $gray;
+    height:100vh;
+    div{
+        h4 {
+            font-weight: 600 ;
+            line-height: 0.3rem;
+
+        }
+
+        img.sidenav-icon {
+            cursor:pointer;
+            position:fixed !important;
+            width:2rem;
+            top:0.5rem;
+            left:1rem;
+            animation: 0.5s sidenav-icon-animation-closed;
+            animation-fill-mode: forwards;   
+        }
+    }
+    width:3vw;
+    transition:0.4s ;
+
+    .sidebar-content{
+      display: none;
+    }
+
+    .sidebar-contacts-count{
+      opacity: 0;
+      color:$gray;
+      }
+
+
+    &.open-sidebar{
+        display: flex;
+        flex-direction: column;
+        width:30vw;
+        div {
+            img.sidenav-icon {
+                animation: 0.5s sidenav-icon-animation-open;
+                animation-fill-mode: forwards;  
+            }
+        }
+      
+         div{
+           h4{
+              animation: 0.5s sidenav-header-animation-open;
+              animation-fill-mode: forwards;
+           }
+        }
+
+      .sidebar-content{
+        display:flex;
+        flex:1;
+        flex-direction: column;
+        animation: 0.5s sidenav-header-animation-open;
+        animation-fill-mode: forwards;
+      }
+
+      .sidebar-contacts-count{
+        animation:0.3s 0.5s sidenav-header-animation-open;
+        animation-fill-mode: forwards;
+
+      }
+    }
+
+    &.closed-sidebar{
+      div{
+        h4{
+          animation:0.5s sidenav-header-animation-close;
+          animation-fill-mode: forwards;
+        }
+      }
+      .sidebar-content{
+        animation: 0.5s sidenav-header-animation-close;
+        animation-fill-mode: forwards;
+      }
+      .sidebar-contacts-count{
+
+        animation:0.3s sidenav-header-animation-close;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    @media (max-width: 767.98px) { 
+        overflow-y: scroll;
+        position:fixed;
+        width:0;
+
+        &.open-sidebar{
+          width:100vw;
+          z-index:1;
+          background-color: white;
+          
+          
+          h4{
+            margin-left:1rem !important;
+          }
+
+          .sidebar-contacts-count{
+            margin-right:1rem;
+          }
+
+          .sidebar-content{
+             margin-right: 0.75rem;
+          }
+        }
+        div{
+          img.sidenav-icon {
+            left:0rem;
+            top:0.75rem
+          }
+        }
+    }
+}
+
+@keyframes sidenav-icon-animation-open {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes sidenav-icon-animation-closed {
+  0% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes sidenav-header-animation-open {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+  100% {
+    opacity:1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes sidenav-header-animation-close {
+  0% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity:0;
+    transform: translateX(-100vw);
+    display:none;
+  }
+}
+

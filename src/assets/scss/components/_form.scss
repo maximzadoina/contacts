@@ -1,0 +1,6 @@
+.custom-text-input{
+    border-radius: 15px;
+    &:focus{
+                    box-shadow: 0px 0px 6px 2px $green;
+                }
+}

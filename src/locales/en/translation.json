@@ -1,0 +1,24 @@
+{
+        "table.all_contacts":"All Contacts",
+        "table.select_all":"Select All",
+        "table.name":"Name",
+        "table.email":"Email Address",
+        "table.phone":"Phone Number",
+        "table.tags":"Tags",
+        "table.new_contact":"New Contact",
+
+        "button.tags":"Tags",
+        "button.delete":"Delete",
+        "button.save":"Save",
+        "button.export_all":"Export All",
+        "button.save_filters":"Save Filters",
+
+        "tag_table.include_tags":"Include Tags:",
+        "tag_table.exclude_tags":"Exclude Tags:",
+        "tag_table.message_sent":"Message Sent",
+        "tag_table.message_received":"Message Received"
+
+
+
+
+}

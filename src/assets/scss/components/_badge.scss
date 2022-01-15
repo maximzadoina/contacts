@@ -1,0 +1,30 @@
+.tag-badge{
+    opacity:0;
+    background-color: $green !important;
+    padding:0.5rem !important;
+    font-weight: 700;
+    animation: 0.5s badge-animation;
+    animation-fill-mode: forwards;  
+    cursor:pointer;
+}
+
+@for $i from 1 through 99 {
+    .tag-badge:nth-child(#{$i}n) {
+        animation-delay: #{$i * 0.1}s;
+    }
+}
+
+@keyframes badge-animation {
+  0% {
+    opacity:0;
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity:1;
+  }
+}
+
+.tag-badge-removed {
+    background-color: $gray !important;
+}

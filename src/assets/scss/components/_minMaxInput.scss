@@ -1,0 +1,15 @@
+.min-max-input{
+    border-radius: 15px;
+    background-color: $lighter-gray;
+    height:3.25rem;
+    border:none;
+    width:47%;
+    &:focus{
+        box-shadow:none;
+        background-color: $light-gray;
+    }
+    &:hover{
+        border:1px solid $gray;
+    }
+
+}
